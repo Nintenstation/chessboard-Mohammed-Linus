@@ -1,4 +1,6 @@
-﻿internal class Program
+﻿using Chessboard;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
@@ -18,28 +20,12 @@
                 size = Console.ReadLine();
                 int.TryParse(size, out boardSize);
             }
-            //3. Nestald for-loop för att skapa rad och kolumn med lika stort antal utifrån använaderns input.
-            //Översta for-loop skapar rad, och kör kolumn for-loopet inuti innan den skapar ny rad. 
 
-            for(int rows = 0; rows < boardSize; rows++)
-            {
-                //4. Skapa ny columns, modulo operator används för att byta mellan de två tecken som finns för varje plats. 
-
-                for(int columns = 0; columns < boardSize; columns++)
-                {
-                    if((rows + columns) % 2 == 0)
-                    {
-                        Console.Write("x ");
-                    }
-                    else
-                    {
-                        Console.Write("1 ");
-                    }
-                }
-                Console.WriteLine();
-            }
+            //Anropa en statisk metod från en annan klass, som har själva nestlade for-loopen som skriver ut schackbrädet.
+            //Använder den utmatade heltalet för att skicka som argument, till metodens parameter i klassen "BoardRendering".
+            BoardRendering.Render_Chessboard(boardSize);
         }
-        
+
         else
         {
             Console.WriteLine("Fel inmatning. Ange ett tal mellan 3 och 50, inga bokstäver.");
