@@ -24,7 +24,29 @@ internal class Program
             Main(null);
         }
 
-    static int Size_Input(string size)
+        //Frågar användaren ifall den vill bygga ett till schakbräde
+        while (true)
+        {
+            Console.WriteLine("Vill du göra ett till schackbräde? (y/n) ");
+            string answer = Console.ReadLine().ToLower();
+
+            if (answer == "y")
+            {
+
+                Main(null);
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Programmet avslutas");
+                break;
+            }
+            
+        }
+            
+        
+
+        static int Size_Input(string size)
     {
             //Kontrollera om användarens input är integer
             if (int.TryParse(size, out int boardSize))
