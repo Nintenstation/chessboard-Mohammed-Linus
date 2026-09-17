@@ -1,4 +1,5 @@
 ﻿using Chessboard;
+using Pastel;
 
 internal class Program
 {
@@ -29,12 +30,12 @@ internal class Program
             }
 
             //Frågar användaren ifall den vill bygga ett till schackbräde
-            Console.WriteLine("Vill du göra ett till schackbräde? (y/n) ");
+            Console.WriteLine("Vill du göra ett till schackbräde? (y/n) ".Pastel(ConsoleColor.Green));
             string answer = Console.ReadLine().ToLower();
 
             if (answer != "y")
             {
-                Console.WriteLine("Programmet avslutas");
+                Console.WriteLine("Programmet avslutas".Pastel(ConsoleColor.Red));
                 active = false;
             }
         }
@@ -48,7 +49,7 @@ internal class Program
         int boardSize;
         while (!int.TryParse(size, out boardSize) || boardSize < 3 || boardSize > 50)
         {
-            Console.Write("Ogiltig storlek eller tecken. Vänligen ange ett tal mellan 3 och 50: ");
+            Console.Write("Ogiltig storlek eller tecken. Vänligen ange ett tal mellan 3 och 50: ".Pastel(ConsoleColor.Red));
             size = Console.ReadLine();
         }
         return boardSize;
@@ -78,7 +79,7 @@ internal class Program
 
     static string User_Answer()
     {
-        Console.Write("Hur stor ska brädet vara? skriv mellan 3 och 50: ");
+        Console.Write("Hur stor ska brädet vara? skriv mellan 3 och 50: ".Pastel(ConsoleColor.Green));
 
         string size = Console.ReadLine();
 
