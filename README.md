@@ -35,6 +35,14 @@ either white or black. The nested for-loop is used not only to construct the row
 of the square currently being printed. A modulo operator % 2 combined with an if-statement ensures the result is strictly 0 or 1. If the 
 result is 0, a black square is printed, and if it is 1, a white square is printed.
 
+The contributors have, throughout the production of the program, used git commands to version-control and manage changes, both major and 
+minor. The changes range from new functions implemented to smaller improvements to existing code, as well as updated comments and README-file.
+With the command "git add", we have chosen to stage and commit the entire project, but we have a lot of the time only staged and committed 
+specific files, such as Program.cs. The commits are named to be clear and straightforward, indicating what the commit has staged and updated
+in the project. We have also encountered a "merge conflict" in development, and we took care of it by having the contributor with the less 
+desirable code completely remove and abort their code using the command "git reset" in the terminal. Afterwards the contributor with the more
+desirable code staged and pushed a commit that worked successfully.
+
 ----------------
 
 Projektet är ett enkelt C#-program som renderar ett schackbräde i konsolen. Användaren kan ange storleken på brädet, och programmet kommer att generera en visuell representation av schackbrädet med hjälp av tecken.
@@ -76,4 +84,8 @@ så är kvadraten vit eller svart. Den nestlade for-loopen används för att int
 identifiera vilken plats den nuvarande kvadraten som skrivs ut befinner sig i. Då används en modulo-operator med 2 och en if-sats, så att
 resultateten blir endast 0 eller 1. Om den är 0 skrivs ut en svart kvadrat, om den är 1 skrivs ut en vit kvadrat.
 
-//skriv om git
+Genom arbetet så har vi i teamet använt git kommando för att versionkontrollera och hantera förändringar, både stora och små. Förändringarna är bland annat nya funktioner
+eller små förbättringar, samt uppdaterad kommentarer och README-fil. I "git add" la vi till de flesta filer, men ibland specifika filer
+som Program.cs. Commiten är avsedda att ha tydlig namn på vad commiten mestadels innebär. Under utvecklingen så stötte vi också på en 
+merge conflict, där vi har båda förändrat kod i samma del av filen. Det hanterade vi genom att den som skrev en mindre önskvärd kod har 
+kört "git reset", och då valde vi den andra och mer önskvärda koden att behålla.
