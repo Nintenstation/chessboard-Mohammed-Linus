@@ -8,12 +8,11 @@ namespace Chessboard
     {
         public static void Render_Chessboard(int BoardSize)
         {
-            //Nestald for-loop för att skapa rad och kolumn med lika stort antal utifrån använaderns input.
-            //Översta for-loop skapar rad, och kör kolumn for-loopet inuti innan den skapar ny rad. 
+            //Nested for-loop to print out a chessboard with equal amounts of rows and columns based on user input
 
             for (int rows = 0; rows < BoardSize; rows++)
             {
-                //Skapa ny columns, modulo operator används för att byta mellan de två tecken som finns för varje plats. 
+                //Modulo operator is utilzied to implement binary logic, where each position will change between white square or black square
 
                 for (int columns = 0; columns < BoardSize; columns++)
                 {

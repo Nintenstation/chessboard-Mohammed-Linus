@@ -5,29 +5,26 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        //Användaren anger input
-        //felhanteras of TryParse() i if-sats och else-sats genom att anropa Size_Input metoden
-        //if- och else-sats för att kontrollera om värdet är en integer. Kallar statisk metod från BoardRendering klassen om...
-        //...integer är rätt, för att skriva ut schackbrädet. Annars startas om programmet.
-        //while-loop används för att senare låta användaren välja om de vill stänga programmet eller fortsätta.
+        //Main method to call methods to receive user input, convert the values to integer, and send as an argument
+        //Entry point starts inside a while-loop to keep the program running until user closes program
 
         bool active = true;
         while (active)
         {
-            //Anropa metod för att be användaren om input, returnera värdet och lagra det i den lokala variablen "size".
+            //Call method to ask user for input, returns value to store it in declared variable "size" to later use as argument
             
             string size = User_Answer();
 
-            //Anropa Size_Input() metoden så att "size" omvandlas till en integer utan fel.
-            //Om konvertering från "size" strängen har lyckats så lagras den i "boardSize" varriabel.
+            //Call method to send "size" as argument that converts it to integer, return integer value and store in "boardSize"
             
             int boardSize = Size_Input(size);
 
-            //Anropa statisk metod från BoardRendering-klassen, och skicka "boardSize" integer som argument för att skriva ut schakbrädet.
+            //Call static method from a different class (BoardRenedering.cs) to print out chessboard
             
             BoardRendering.Render_Chessboard(boardSize);      
 
-            //Frågar användaren ifall den vill bygga ett till schackbräde
+            //Asks the user if they want to print out more chessboards, otherwise close program
+
             Console.Write("Vill du göra ett till schackbräde? (y/n): ".Pastel(ConsoleColor.Green));
             string answer = Console.ReadLine().ToLower();
 
@@ -41,9 +38,7 @@ internal class Program
     }
             
         
-    //Metod som ska omvandla "size" sträng input till en integer. "size" skickas som argument från Main metoden.
-    //Inkluderar enkel felhantering med hjälp av en while-loop, som integrerar en kombinerad villkorsuttryck med hjälp av TryParse()
-    //och jämförelse. 
+    //Method to convert "size" from string to integer "boardSize", includes exception handling and returns integer
     
     static int Size_Input(string size)
     {
@@ -59,7 +54,7 @@ internal class Program
 
     }
 
-    //Metod för att användaren ska mata in ett svar, i form av sträng. Sträng-värdet returneras.
+    //Method for user input, returns as a string value
     
     static string User_Answer()
     {
